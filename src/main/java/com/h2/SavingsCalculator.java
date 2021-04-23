@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 
 public class SavingsCalculator {
-    private final float [] credits;
-    private final float [] debits;
+    private float [] credits;
+    private float [] debits;
 
     public SavingsCalculator(float[] credits, float[] debits) {
         this.credits = credits;
@@ -32,7 +32,8 @@ public class SavingsCalculator {
     private static int remainingDaysInMonth(LocalDate date) {
         YearMonth yearMonth = YearMonth.of(date.getYear(), date.getMonth());
         int totalTotalDaysInMonth = yearMonth.lengthOfMonth();
-        return totalTotalDaysInMonth - date.getDayOfMonth();
+        int remainingDays = totalTotalDaysInMonth - date.getDayOfMonth();
+        return remainingDays;
     }
 
     public float calculate () {
@@ -41,8 +42,7 @@ public class SavingsCalculator {
 
     public static void main (String[] args) {
         final String[] credtisAsString = args[0].split(",");
-        final String[] debitsAsString;
-        debitsAsString = args[1].split(",");
+        final String[] debitsAsString = args[1].split(",");
 
         final float[] credits = new float[credtisAsString.length];
         final float[] debits = new float[debitsAsString.length];
