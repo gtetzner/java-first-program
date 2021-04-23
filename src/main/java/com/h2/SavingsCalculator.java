@@ -12,21 +12,21 @@ public class SavingsCalculator {
         this.debits = debits;
     }
 
-    private float sunOfCredits() {
-        float sun = 0.0f;
+    private float sumOfCredits() {
+        float sum = 0.0f;
         for(float credit: credits) {
-            sun += credit;
+            sum += credit;
 
         }
-        return sun;
+        return sum;
     }
 
-    private float sunOfDebits() {
-        float sun = 0.0f;
+    private float sumOfDebits() {
+        float sum = 0.0f;
         for(float debit: debits) {
-            sun += debit;
+            sum += debit;
         }
-        return sun;
+        return sum;
     }
 
     private static int remainingDaysInMonth(LocalDate date) {
@@ -37,7 +37,7 @@ public class SavingsCalculator {
     }
 
     public float calculate () {
-        return sunOfCredits() - sunOfDebits();
+        return sumOfCredits() - sumOfDebits();
     }
 
     public static void main (String[] args) {
