@@ -15,6 +15,7 @@ public class MortgageCalculator {
     }
 
     private int getNumber0Payments() {
+
         return ternInYears * 12;
     }
 
@@ -34,7 +35,7 @@ public class MortgageCalculator {
 
     public String toString() {
         DecimalFormat df = new DecimalFormat("####0.00");
-        return "monthlyPayment: " +df.format(monthlyPayment);
+        return "monthlyPayment: " + df.format(monthlyPayment);
     }
 
     public static void main(String[] args){
