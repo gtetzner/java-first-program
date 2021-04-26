@@ -4,19 +4,19 @@ import java.text.DecimalFormat;
 
 public class MortgageCalculator {
     private long loanAmount;
-    private int ternInYears;
+    private int termInYears;
     private float annualRate;
     private double monthlyPayment;
 
     public MortgageCalculator(long loanAmount, int ternInYears, float annualRate) {
         this.loanAmount = loanAmount;
-        this.ternInYears = ternInYears;
+        this.termInYears = ternInYears;
         this.annualRate = annualRate;
     }
 
     private int getNumber0Payments() {
 
-        return ternInYears * 12;
+        return termInYears * 12;
     }
 
     private float getMonthlyInterestRate() {
